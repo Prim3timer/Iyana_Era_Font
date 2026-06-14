@@ -1,0 +1,21 @@
+const initialState = {
+  name: "",
+  firstPrice: 0,
+  secondPrice: 0,
+  firstUnitMeasure: "",
+  secondUnitMeasure: "",
+  qty: 0,
+  denominator: 0,
+  numerator: 0,
+  transArray: [],
+  unitMeasure: "",
+  alertMsg: "",
+  cash: false,
+  total: 0,
+  search: "",
+  search2: "",
+  acquiItems: [],
+  receipts: [],
+};
+
+export default initialState;
