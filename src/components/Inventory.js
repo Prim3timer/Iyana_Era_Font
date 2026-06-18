@@ -30,7 +30,6 @@ const Inventory = () => {
     }
   };
   const onUnitMeasureChange = (e, id) => {
-    console.log("jioooo");
     const currentItem = state.acquiItems.find((item) => item._id === id);
     const measureIndex = currentItem.availableUnitMeasures.indexOf(
       e.target.value,

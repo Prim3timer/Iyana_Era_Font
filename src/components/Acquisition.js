@@ -117,11 +117,15 @@ const Acquisition = () => {
   const doneSales = async () => {
     try {
       const { transArray, total } = state;
-      console.log(transArray);
-      if (state.transArray.length) {
+      const numerizedQtyTransArray = transArray.map((item) => {
+        const { qty } = item;
+        const numerizedQty = Number(qty);
+        return { ...item, qty: numerizedQty };
+      });
+      if (transArray.length) {
         const transItems = {
           paidAmount: state.paidAmount,
-          goods: transArray,
+          goods: numerizedQtyTransArray,
           grandTotal: total,
           numerator,
           measureIndex,
@@ -130,6 +134,7 @@ const Acquisition = () => {
         const response = await axios.post("/acquisition", transItems);
         console.log(transItems);
       }
+      console.log(numerizedQtyTransArray);
     } catch (error) {}
   };
 

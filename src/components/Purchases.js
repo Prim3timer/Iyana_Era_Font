@@ -11,7 +11,6 @@ const Purchases = () => {
   const { numberWithCommas, acquiItems, currency } = useContext(ItemContext);
   const getAcquisitions = async () => {
     const response = await axios.get("/acquisition");
-    console.log(response.data);
     try {
       let innerArray = [];
       response.data.map((purchase) => {

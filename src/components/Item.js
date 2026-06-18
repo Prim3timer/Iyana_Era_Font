@@ -38,25 +38,6 @@ const Item = () => {
     dispatch({ type: "ITEM", payload: trans });
   };
 
-  const deletItem = async () => {
-    const response = await axios.delete(`/items/${state.item._id}`);
-    const currentItems = state.acquiItems.filter(
-      (item) => item._id !== state.item._id,
-    );
-    dispatch({ type: "ACQUIITEMS", payload: currentItems });
-    dispatch({ type: "VERIFY", payload: false });
-
-    console.log(response.data);
-  };
-
-  const remainDelete = () => {
-    // this condition statement is to enable the removal of the confirm window once any part of the
-    // page is touched.
-    if (state.verify) {
-      dispatch({ type: "VERIFY", payload: false });
-    }
-  };
-
   useEffect(() => {
     getItems();
   }, [state.search]);
@@ -88,7 +69,11 @@ const Item = () => {
               <Link to={"/edit-item"}>
                 <h3>{item.name}</h3>
                 <p>Price: {item.availablePrices[0]}</p>
-                <p>qty: {item.availableQuantities[0]}</p>
+                <p>
+                  qty: {item.availableQuantities[0]}{" "}
+                  {item.availableUnitMeasures[0]}
+                  {item.qty > 1 ? "s" : ""}
+                </p>
                 <p>
                   {" "}
                   created:{" "}
@@ -110,26 +95,6 @@ const Item = () => {
             </div>
           );
         })}
-        <div className={state.verify ? "delete" : "no-delete"}>
-          <h3
-            id="verify-header"
-            style={{
-              margin: ".5rem auto",
-              //   display: 'flex',
-            }}
-          >
-            Delete {state.item.name} from list
-          </h3>
-          <article className="delete-buttons">
-            <button onClick={remainDelete}>No</button>
-            <button
-              onClick={deletItem}
-              style={{ backgroundColor: "red", borderColor: "red" }}
-            >
-              Yes
-            </button>
-          </article>
-        </div>
       </section>
     </div>
   );

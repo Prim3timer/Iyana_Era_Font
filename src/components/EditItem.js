@@ -61,13 +61,13 @@ const EditItem = () => {
     const now = new Date();
     const prices = [state.firstPrice, state.secondPrice];
     const unitMeasures = [state.firstUnitMeasure, state.secondUnitMeasure];
-    const quanities = [state.qty, state.numerator];
+    const quanities = [Number(state.qty), state.numerator];
     const newItem = {
       name: state.name,
       availableUnitMeasures: unitMeasures,
       availablePrices: prices,
       availableQuantities: quanities,
-      qty: state.qty,
+      qty: Number(state.qty),
       denominator: state.denominator,
       numerator: state.numerator,
       date: now,
