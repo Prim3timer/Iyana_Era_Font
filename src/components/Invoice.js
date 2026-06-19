@@ -50,7 +50,7 @@ const Invoice = () => {
                   <div className="goods-container" key={good._id}>
                     <p className="good-name"> {good.name}</p>
                     <p className="good-measure">
-                      {good.qty} {good.unitMeasure}
+                      {numberWithCommas(good.qty)} {good.unitMeasure}
                       {good.qty > 1 ? "s" : ""}
                     </p>
                     <p>{good.description}</p>
