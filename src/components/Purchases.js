@@ -126,7 +126,7 @@ const Purchases = () => {
           <tr className="theader-row">
             <th className="gen-sales-theader">NAME</th>
             <th className="gen-sales-theader">QTY</th>
-            <th className="gen-sales-theader">TOTAL</th>
+            <th className="gen-sales-theader">COST</th>
             <th className="gen-sales-theader">DATE</th>
           </tr>
           {purchases &&
@@ -163,7 +163,7 @@ const Purchases = () => {
               );
             })}
           <tr className="trow">
-            <th>Grand Total:</th>
+            <th>Total Cost:</th>
             <th>
               {same &&
                 numberWithCommas(

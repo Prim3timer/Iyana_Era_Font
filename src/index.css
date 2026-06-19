@@ -337,6 +337,11 @@ button {
   font-size: 1.5rem;
 }
 
+.theader-row >* {
+  border-bottom: 2px solid brown;
+
+}
+
 
 .goods-container {
   display: grid;

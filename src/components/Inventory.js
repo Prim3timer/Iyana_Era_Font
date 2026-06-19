@@ -78,7 +78,7 @@ const Inventory = () => {
       </form>
       <table className="inventory-table">
         <tbody>
-          <tr className="invent-header-trow">
+          <tr className="theader-row">
             <th>Name</th>
             <th>In-Stock</th>
             <th> Unit Measure</th>
