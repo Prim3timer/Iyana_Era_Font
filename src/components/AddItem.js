@@ -31,7 +31,11 @@ const AddItem = () => {
     console.log(newItem);
     try {
       const response = await axios.post("/items", newItem);
-      console.log(response.data);
+      dispatch({ type: "VERIFY", payload: true });
+      dispatch({ type: "ALERTMSG", payload: response.data });
+      setTimeout(() => {
+        dispatch({ type: "VERIFY", payload: false });
+      }, 3000);
     } catch (error) {
       console.error(error);
     }
@@ -85,9 +89,16 @@ const AddItem = () => {
           }
         />
         <button onClick={createItem} className="create-item-button">
-          create
+          add
         </button>
       </form>
+      <div className={state.verify ? "delete" : "no-delete"}>
+        <h3
+        // id="verify-header"
+        >
+          {state.alertMsg}
+        </h3>
+      </div>
     </div>
   );
 };

@@ -109,7 +109,7 @@ const Inventory = () => {
                     //   color: inv?.availableQuanities[0] < 20 ? "red" : "",
                     // }}
                   >
-                    {numberWithCommas(parseFloat(inv.qty).toFixed(2))}{" "}
+                    {numberWithCommas(inv.qty)}{" "}
                   </th>
                   <td>
                     <select

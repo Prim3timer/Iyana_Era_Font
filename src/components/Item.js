@@ -30,14 +30,6 @@ const Item = () => {
     }
   };
 
-  const asertain = (id) => {
-    dispatch({ type: "VERIFY", payload: true });
-
-    // dispatch({ type: "id", payload: id });
-    const trans = state.acquiItems.find((item) => item._id === id);
-    dispatch({ type: "ITEM", payload: trans });
-  };
-
   useEffect(() => {
     getItems();
   }, [state.search]);
