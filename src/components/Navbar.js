@@ -10,8 +10,8 @@ const Navbar = () => {
         <Link className={"link-cover"} to={"/acquisition"}>
           acquisition
         </Link>
-        <Link to={"/purchases"} className="link-cover">
-          purchases
+        <Link to={"/expenditure"} className="link-cover">
+          expenditure
         </Link>
         <Link to={"/items"} className={"link-cover"}>
           items
@@ -19,14 +19,14 @@ const Navbar = () => {
         <Link to={"/add-item"} className={"link-cover"}>
           add item
         </Link>
-        <Link to={"/edit-item"} className={"link-cover"}>
+        {/* <Link to={"/edit-item"} className={"link-cover"}>
           edit item
-        </Link>
+        </Link> */}
         <Link to={"/inventory"} className={"link-cover"}>
           inventory
         </Link>
-        <Link to={"/invoice"} className={"link-cover"}>
-          invoice
+        <Link to={"/purchase-history"} className={"link-cover"}>
+          purchase history
         </Link>
         <Link to={"/usage"} className={"link-cover"}>
           usage

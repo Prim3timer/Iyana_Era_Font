@@ -5,12 +5,12 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Inventory from "./components/Inventory";
 import Layout from "./components/Layout";
-import Invoice from "./components/Invoice";
+import PurchaseHistory from "./components/PurchaseHistory";
 import Acquisition from "./components/Acquisition";
 import Usage from "./components/Usage";
 import Used from "./components/Used";
 import UsageData from "./components/UsageData";
-import Purchases from "./components/Purchases";
+import Expenditure from "./components/Expenditure";
 function App() {
   return (
     <main className="App">
@@ -23,12 +23,12 @@ function App() {
             <Route path="/edit-item" element={<EditItem />} />
             <Route path="/add-item" element={<AddItem />} />
             <Route path="inventory" element={<Inventory />} />
-            <Route path="invoice" element={<Invoice />} />
+            <Route path="purchase-history" element={<PurchaseHistory />} />
             <Route path="acquisition" element={<Acquisition />} />
             <Route path="usage" element={<Usage />} />
             <Route path="used" element={<Used />} />
             <Route path="/usage-data" element={<UsageData />} />
-            <Route path="/purchases" element={<Purchases />} />
+            <Route path="/expenditure" element={<Expenditure />} />
           </Route>
         </Routes>
       </div>

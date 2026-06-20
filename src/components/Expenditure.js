@@ -4,7 +4,7 @@ import reducer from "../reducer";
 import initialState from "../store";
 import ItemContext from "../context/itemProvider";
 
-const Purchases = () => {
+const Expenditure = () => {
   const [purchases, setPurchases] = useState([]);
   const [same, setSame] = useState(false);
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -87,7 +87,7 @@ const Purchases = () => {
   }, [state.search, state.search2]);
   return (
     <div className="usage">
-      <h3>Purchases</h3>
+      <h3>Expenditure</h3>
       {same && (
         <article className="sales-button">
           <button onClick={firstUnit}>unit 1</button>
@@ -192,4 +192,4 @@ const Purchases = () => {
   );
 };
 
-export default Purchases;
+export default Expenditure;

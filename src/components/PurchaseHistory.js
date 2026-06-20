@@ -6,7 +6,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import axios from "../app/api/axios";
 import reducer from "../reducer";
 import initialState from "../store";
-const Invoice = () => {
+const PurchaseHistory = () => {
   const { getReceipts, currency, numberWithCommas, receipts } =
     useContext(ItemContext);
   console.log(receipts);
@@ -28,7 +28,7 @@ const Invoice = () => {
 
   return (
     <div>
-      <h3>Invoice</h3>
+      <h3>Purchas eHistory</h3>
       {receipts.map((receipt) => {
         const theDay = format(receipt.date, "dd/MM/yyyy");
         return (
@@ -80,4 +80,4 @@ const Invoice = () => {
   );
 };
 
-export default Invoice;
+export default PurchaseHistory;
