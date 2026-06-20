@@ -28,7 +28,7 @@ const PurchaseHistory = () => {
 
   return (
     <div>
-      <h3>Purchas eHistory</h3>
+      <h3>Purchase History</h3>
       {receipts.map((receipt) => {
         const theDay = format(receipt.date, "dd/MM/yyyy");
         return (
@@ -40,8 +40,8 @@ const PurchaseHistory = () => {
             <article className="items-header">
               <h4>item</h4>
               <h4>qty</h4>
+              <h4>cost ({currency})</h4>
               <h4>desc</h4>
-              <h4>cost</h4>
             </article>
             <hr />
             <section className="good-outer">
@@ -53,18 +53,15 @@ const PurchaseHistory = () => {
                       {numberWithCommas(good.qty)} {good.unitMeasure}
                       {good.qty > 1 ? "s" : ""}
                     </p>
+                    <p>{numberWithCommas(parseFloat(good.total).toFixed(2))}</p>
                     <p>{good.description}</p>
-                    <p>
-                      {currency}
-                      {numberWithCommas(parseFloat(good.total).toFixed(2))}
-                    </p>
                   </div>
                 );
               })}
             </section>
             <hr className="horizontal" />
             <section className="total-elements">
-              <h4 className="receipts-grand-total">Total Cost:</h4>{" "}
+              <h4 className="receipts-grand-total">Total Cost:</h4>
               <h4>
                 {currency}
                 {numberWithCommas(parseFloat(receipt.grandTotal).toFixed(2))}
