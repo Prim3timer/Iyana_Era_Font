@@ -74,7 +74,10 @@ code {
   top: 0;
   display: flex;
   justify-content: flex-start;
+  white-space: nowrap;
+
   padding: .5rem 0;
+  overflow-x: auto;
 }
 
 .footer {
@@ -406,7 +409,7 @@ button {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   align-items: end;
-  text-align: left;
+text-align: left;
   justify-content: end;
   float: left;
   width: 80%;
