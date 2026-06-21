@@ -21,6 +21,7 @@ const initialState = {
   localAcqui: [],
   verify: false,
   item: {},
+  id: "",
 };
 
 export default initialState;

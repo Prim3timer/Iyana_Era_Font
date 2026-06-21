@@ -123,6 +123,8 @@ const reducer = (state, action) => {
       return { ...state, verify: action.payload };
     case "ITEM":
       return { ...state, item: action.payload };
+    case "ID":
+      return { ...state, id: action.payload };
     default:
       throw new Error();
   }

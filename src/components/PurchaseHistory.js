@@ -11,15 +11,43 @@ const PurchaseHistory = () => {
     useContext(ItemContext);
   console.log(receipts);
   const [state, dispatch] = useReducer(reducer, initialState);
+  const iyaId = localStorage.getItem("iyaId");
   const removeItem = async (id) => {
     try {
-      const filterate = state.receipts.filter((receipt) => receipt._id !== id);
-      const response = await axios.delete(`/acquisition/${id}`);
+      const filterate = state.receipts.filter(
+        (receipt) => receipt._id !== iyaId,
+      );
+      const response = await axios.delete(`/acquisition/${state.id}`);
       dispatch({ type: "RECEIPTS", payload: filterate });
+      dispatch({ type: "VERIFY", payload: false });
       // [filterate, receipts];
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const asertain = (id) => {
+    console.log(id);
+    dispatch({ type: "VERIFY", payload: true });
+
+    dispatch({ type: "ID", payload: id });
+    // const trans = state.acquiItems.find((item) => item._id === iyaId);
+    // dispatch({ type: "ITEM", payload: trans });
+  };
+
+  const remainDelete = () => {
+    // this condition statement is to enable the removal of the confirm window once any part of the
+    // page is touched.
+    if (state.verify) {
+      dispatch({ type: "VERIFY", payload: false });
+    }
+  };
+
+  const deletItem = async () => {
+    console.log(iyaId);
+    const response = await axios.delete(`/items/${iyaId}`);
+    const currentItems = state.acquiItems.filter((item) => item._id !== iyaId);
+    dispatch({ type: "ACQUIITEMS", payload: currentItems });
   };
 
   useEffect(() => {
@@ -67,12 +95,32 @@ const PurchaseHistory = () => {
                 {numberWithCommas(parseFloat(receipt.grandTotal).toFixed(2))}
               </h4>
             </section>
-            <h2 onClick={() => removeItem(receipt._id)} className="trash">
+            <h2 onClick={() => asertain(receipt._id)} className="trash">
               <FaTrashAlt role="button" />
             </h2>
           </div>
         );
       })}
+      <div className={state.verify ? "delete" : "no-delete"}>
+        <h3
+          id="verify-header"
+          style={{
+            margin: ".5rem auto",
+            //   display: 'flex',
+          }}
+        >
+          Delete {state.name} from list
+        </h3>
+        <article className="delete-buttons">
+          <button onClick={remainDelete}>No</button>
+          <button
+            onClick={removeItem}
+            style={{ backgroundColor: "red", borderColor: "red" }}
+          >
+            Yes
+          </button>
+        </article>
+      </div>
     </div>
   );
 };
