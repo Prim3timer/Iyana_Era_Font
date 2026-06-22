@@ -62,7 +62,7 @@ const Item = () => {
                 <h3>{item.name}</h3>
                 <p>Price: {numberWithCommas(item.availablePrices[0])}</p>
                 <p>
-                  qty: {item.availableQuantities[0]}{" "}
+                  in-stock: {item.availableQuantities[0]}{" "}
                   {item.availableUnitMeasures[0]}
                   {item.qty > 1 ? "s" : ""}
                 </p>

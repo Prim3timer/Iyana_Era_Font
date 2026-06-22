@@ -89,6 +89,10 @@ code {
   overflow-x: auto;
 }
 
+.the-day {
+  text-align: right
+}
+
 .navbar>* {
   background-color: ;
 }
