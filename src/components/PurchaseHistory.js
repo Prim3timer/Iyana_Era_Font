@@ -92,7 +92,9 @@ const PurchaseHistory = () => {
                       {numberWithCommas(good.qty)} {good.unitMeasure}
                       {good.qty > 1 ? "s" : ""}
                     </p>
-                    <p>{numberWithCommas(parseFloat(good.total).toFixed(2))}</p>
+                    <p className="good-total">
+                      {numberWithCommas(parseFloat(good.total).toFixed(2))}
+                    </p>
                     <p className="good-description">
                       {" "}
                       {readMore
