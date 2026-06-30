@@ -216,7 +216,7 @@ const Acquisition = () => {
                     id: item._id,
                   })
                 }
-              ></textarea>
+            ></textarea>
               <article>
                 <h4
                 // style={{

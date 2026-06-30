@@ -20,8 +20,8 @@ const Navbar = () => {
           add item
         </Link>
         {/* <Link to={"/edit-item"} className={"link-cover"}>
-          edit item
-        </Link> */}
+            edit item
+          </Link> */}
         <Link to={"/inventory"} className={"link-cover"}>
           inventory
         </Link>
