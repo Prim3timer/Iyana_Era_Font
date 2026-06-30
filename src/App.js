@@ -11,6 +11,7 @@ import Usage from "./components/Usage";
 import Used from "./components/Used";
 import UsageData from "./components/UsageData";
 import Expenditure from "./components/Expenditure";
+
 function App() {
   return (
     <main className="App">
@@ -18,7 +19,7 @@ function App() {
       <div className="grower">
         <h4 className="app-headline">Iyana Era Project</h4>
         <Routes>
-          <Route path="/">
+          <Route path="/" element={<Layout />}>
             <Route path="/" index element={<Item />} />
             <Route path="/items" index element={<Item />} />
             <Route path="/edit-item" element={<EditItem />} />
