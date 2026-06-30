@@ -20,7 +20,7 @@ function App() {
         <h4 className="app-headline">Iyana Era Project</h4>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path="/*" index element={<Item />} />
+            <Route path="/" index element={<Item />} />
             <Route path="/items" index element={<Item />} />
             <Route path="/edit-item" element={<EditItem />} />
             <Route path="/add-item" element={<AddItem />} />
